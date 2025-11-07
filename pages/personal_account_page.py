@@ -9,7 +9,7 @@ class PersonalAccountPage(BasePage):
 
     def open_history_page(self):
         self.click_element(LocatorPersonalAccount.HISTORY_ORDER_BUTTON)
-        return self.wait_visibility_element(LocatorPersonalAccount.ORDER_HISTORY_BLOCK)
+        return self.wait_presence_element(LocatorPersonalAccount.ORDER_HISTORY_BLOCK)
 #d
     def click_logout(self):
         self.click_element(LocatorPersonalAccount.LOGOUT_BUTTON)
