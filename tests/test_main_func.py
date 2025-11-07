@@ -1,6 +1,5 @@
 from pages.login_page import LoginPage
 from pages.main_func_page import MainFuncPage
-from test_data import VALID_EMAIL, VALID_PASSWORD
 
 
 class TestMainFunc:
@@ -23,8 +22,8 @@ class TestMainFunc:
         main_func.drag_ingredient_to_constructor()
         assert main_func.get_ingredient_counter() != 0
 
-    def test_authorized_user_creates_order(self, driver):
+    def test_authorized_user_creates_order(self, driver, new_user):
         main_func = MainFuncPage(driver)
         login = LoginPage(driver)
-        login.authorize_user(VALID_EMAIL, VALID_PASSWORD)
+        login.authorize_user(new_user['email'], new_user['password'])
         assert main_func.make_order()

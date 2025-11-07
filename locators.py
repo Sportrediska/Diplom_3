@@ -34,3 +34,4 @@ class LocatorMainFunc:
     ORDER_FEED_NUMBER_ALL = (By.XPATH, "//p[contains(text(), 'Выполнено за все время')]/following-sibling::p")
     ORDER_FEED_NUMBER_TODAY = (By.XPATH, "//p[contains(text(), 'Выполнено за сегодня')]/following-sibling::p")
     ORDER_IN_WORK = (By.CSS_SELECTOR, ".OrderFeed_orderListReady__1YFem .text_type_digits-default")
+    ORDERS_READY = (By.CSS_SELECTOR, ".OrderFeed_orderList__cBvyi:not(.OrderFeed_orderListReady__1YFem) .text_type_digits-default")

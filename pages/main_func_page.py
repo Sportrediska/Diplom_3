@@ -45,6 +45,10 @@ class MainFuncPage(BasePage):
     def get_order_id_from_popup_order_created(self):
         return self.find_element(LocatorMainFunc.POPUP_ORDER_ID_LARGE).text
 
-    def check_order_in_work(self, order_id):
+    def wait_order_in_work(self, order_id):
         self.wait_visibility_element(LocatorMainFunc.ORDER_IN_WORK)
         return self.wait_element_text_will_be(LocatorMainFunc.ORDER_IN_WORK, "0" + order_id)
+
+    def wait_order_ready(self, order_id):
+        self.wait_visibility_element(LocatorMainFunc.ORDER_IN_WORK)
+        return self.wait_element_text_will_be(LocatorMainFunc.ORDERS_READY, "0" + order_id)

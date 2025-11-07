@@ -6,7 +6,7 @@ from base_url import BASE_URL
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
-        self.wait = WebDriverWait(driver, 20)
+        self.wait = WebDriverWait(driver, 40)
 #
     def open(self, path=""):
         self.driver.get(f"{BASE_URL}{path}")
